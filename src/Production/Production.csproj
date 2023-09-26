@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Squer.Workshops.PropertyBasedTesting.Production</AssemblyName>
+        <RootNamespace>Squer.Workshops.PropertyBasedTesting.Production</RootNamespace>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+</Project>
