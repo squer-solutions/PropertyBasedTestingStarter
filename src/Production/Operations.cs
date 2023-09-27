@@ -6,4 +6,25 @@ public static class Operations
     {
         return a + b;
     }
+
+    public static Control[] Merge(Control controlA, Control controlB)
+    {
+        return new Control[] { controlA };
+    }
+}
+
+public record Control(DateTime Start, PositiveTimeSpan Duration);
+
+public record struct PositiveTimeSpan
+{
+    public static PositiveTimeSpan FromSeconds(ulong seconds) => new(seconds);
+
+    private PositiveTimeSpan(ulong seconds)
+    {
+        Value = TimeSpan.FromSeconds(seconds);
+    }
+
+    public TimeSpan Value { get; }
+
+    public override string ToString() => Value.ToString();
 }

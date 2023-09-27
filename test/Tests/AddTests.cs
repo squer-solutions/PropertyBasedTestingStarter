@@ -4,18 +4,10 @@ using FsCheck.Xunit;
 using Xunit.Abstractions;
 using static Squer.Workshops.PropertyBasedTesting.Production.Operations;
 
-namespace Tests;
+namespace Squer.Workshops.PropertyBasedTesting.Tests;
 
 public class AddTests
-
 {
-    private readonly ITestOutputHelper _testOutputHelper;
-
-    public AddTests(ITestOutputHelper testOutputHelper)
-    {
-        _testOutputHelper = testOutputHelper;
-    }
-
     [Fact]
     public void ZeroPlusZeroIsZero()
     {
@@ -39,24 +31,21 @@ public class AddTests
     [Property]
     public Property AddSupportsAssociation(int x, int y, int z)
     {
-        _testOutputHelper.WriteLine($"{x},{y},{z}");
         return (Add(x, Add(y, z)) == Add(Add(x, y), z))
-            .ToProperty();
+            .Collect($"({x}, {y}, {z})");
     }
 
     [Property]
     public Property AddingOppositeNumbersIsZero(int x)
     {
-        _testOutputHelper.WriteLine($"{x}");
         return (Add(x, -x) == 0)
-            .ToProperty();
+            .Collect($"{x}");
     }
 
     [Property]
     public Property SumOfOppositeNumbers(int x, int y)
     {
-        _testOutputHelper.WriteLine($"{x},{y}");
         return (-Add(x, y) == Add(-x, -y))
-            .ToProperty();
+            .Collect($"({x}, {y})");
     }
 }

@@ -6,6 +6,10 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>Squer.Workshops.PropertyBasedTesting.Tests</AssemblyName>
+
+        <RootNamespace>Squer.Workshops.PropertyBasedTesting.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -26,5 +30,6 @@
     <ItemGroup>
       <ProjectReference Include="..\..\src\Production\Production.csproj" />
     </ItemGroup>
+
 
 </Project>
