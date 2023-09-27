@@ -2,8 +2,9 @@ using FluentAssertions;
 using FsCheck;
 using FsCheck.Xunit;
 using Squer.Workshops.PropertyBasedTesting.Production;
+using Squer.Workshops.PropertyBasedTesting.Production.Model;
 using Squer.Workshops.PropertyBasedTesting.Tests.Generators;
-using static Squer.Workshops.PropertyBasedTesting.Production.Operations;
+using static Squer.Workshops.PropertyBasedTesting.Production.ControlMerger;
 
 namespace Squer.Workshops.PropertyBasedTesting.Tests;
 
@@ -12,7 +13,7 @@ public class ControlMergeTests
     [Property(Arbitrary = new[] { typeof(ControlGenerator) })]
     public Property TwoTimesTheSameControl_ResultsInThatControl_BOOL_BASED(Control control)
     {
-        var controls = Merge(control, control);
+        var controls = ControlMerger.Merge(control, control);
         return (
             controls.Length == 1 && controls[0] == control
         ).ToProperty();

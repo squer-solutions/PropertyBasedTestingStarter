@@ -1,5 +1,5 @@
 using FsCheck;
-using Squer.Workshops.PropertyBasedTesting.Production;
+using Squer.Workshops.PropertyBasedTesting.Production.Model;
 
 namespace Squer.Workshops.PropertyBasedTesting.Tests.Generators;
 

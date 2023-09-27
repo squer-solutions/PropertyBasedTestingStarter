@@ -1,7 +1,6 @@
 using FluentAssertions;
 using FsCheck;
 using FsCheck.Xunit;
-using Xunit.Abstractions;
 using static Squer.Workshops.PropertyBasedTesting.Production.Operations;
 
 namespace Squer.Workshops.PropertyBasedTesting.Tests;
